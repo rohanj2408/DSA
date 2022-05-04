@@ -1,12 +1,13 @@
 #include<iostream>
 using namespace std;
 
-void printArray(int arr[],int n)
+int printArray(int arr[],int n)
 {
     for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
     }
+    return 0;
 }
 
 int swap(int &a, int &b)
@@ -19,17 +20,20 @@ int swap(int &a, int &b)
     return 0;
 }
 
-void rev(int arr[], int n)
+int rev(int arr[], int n)
 {
-    int start = 0;
-    int end = n-1;
+    int i = 0;
+    int j = n-1;
 
-    while(start <= end)
+    while(i<=j)
     {
-        swap(arr[start],arr[end]);
+        swap(arr[i],arr[j]);
+        i++;
+        j--;
     }
     
-    cout<<"Array has been reversed!";
+    cout<<"Array has been reversed!"<<endl;
+    return 0;
 }
 
 int main()
@@ -53,5 +57,6 @@ int main()
     }
     
     rev(arr1,n);
+    cout<<"Reversed array is: "<<endl;
     printArray(arr1,n);
 }
